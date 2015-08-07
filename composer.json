@@ -17,9 +17,8 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "propel/propel": "~2.0@dev",
-        "propel/propel-bundle": "~2.0@dev",
-        "spyrit/propel-datagrid-bundle": "2.0.x-dev"
+        "propel/propel-bundle": "1.4.*@dev",
+        "spyrit/propel-datagrid-bundle": "1.0.x-dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

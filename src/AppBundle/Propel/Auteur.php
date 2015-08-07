@@ -2,7 +2,7 @@
 
 namespace AppBundle\Propel;
 
-use AppBundle\Propel\Base\Auteur as BaseAuteur;
+use AppBundle\Propel\om\BaseAuteur as BaseAuteur;
 
 /**
  * Skeleton subclass for representing a row from the 'auteur' table.

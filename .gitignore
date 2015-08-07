@@ -23,8 +23,8 @@ catalog.xml
 *.psd
 *~
 .htpasswd
-Base
-Map
+src/AppBundle/Propel/map
+src/AppBundle/Propel/om
 /app/bootstrap.php.cache
 /app/cache/*
 !app/cache/.gitkeep

@@ -2,7 +2,7 @@
 
 namespace AppBundle\Propel;
 
-use AppBundle\Propel\Base\LivreQuery as BaseLivreQuery;
+use AppBundle\Propel\om\BaseLivreQuery as BaseLivreQuery;
 
 /**
  * Skeleton subclass for performing query and update operations on the 'livre' table.

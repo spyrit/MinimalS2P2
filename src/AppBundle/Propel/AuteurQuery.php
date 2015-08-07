@@ -2,7 +2,7 @@
 
 namespace AppBundle\Propel;
 
-use AppBundle\Propel\Base\AuteurQuery as BaseAuteurQuery;
+use AppBundle\Propel\om\BaseAuteurQuery as BaseAuteurQuery;
 
 /**
  * Skeleton subclass for performing query and update operations on the 'auteur' table.

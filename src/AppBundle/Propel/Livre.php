@@ -2,7 +2,7 @@
 
 namespace AppBundle\Propel;
 
-use AppBundle\Propel\Base\Livre as BaseLivre;
+use AppBundle\Propel\om\BaseLivre as BaseLivre;
 
 /**
  * Skeleton subclass for representing a row from the 'livre' table.
