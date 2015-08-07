@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Bad credentials.</source>
+                <target>Identifiants incorrects.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Your session has timed out, or you have disabled cookies.</source>
+                <target>Votre session a expirée ou vous avez désactivé les cookies.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>User account is disabled.</source>
+                <target>Votre compte n'a pas encore été activé.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>User account is locked.</source>
+                <target>Votre compte n'est actuellement pas accessible.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Your account is removed</source>
+                <target>Votre compte est supprimé.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Your account has been disabled.</source>
+                <target>Votre compte a été désactivé.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>This form should not contain extra fields.</source>
+                <target>Ce formulaire ne doit pas contenir d'informations supplémentaires.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Jan</source>
+                <target>Jan</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Feb</source>
+                <target>Fév</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Mar</source>
+                <target>Mar</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Apr</source>
+                <target>Avr</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>May</source>
+                <target>Mai</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Jun</source>
+                <target>Juin</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Jul</source>
+                <target>Juil</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Aug</source>
+                <target>Aoû</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Sep</source>
+                <target>Sep</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Oct</source>
+                <target>Oct</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Nov</source>
+                <target>Nov</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Dec</source>
+                <target>Déc</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

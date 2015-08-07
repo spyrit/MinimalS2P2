@@ -1,0 +1,63 @@
+{{ form_errors(form) }}
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group"> 
+            <label class="col-sm-4 control-label">{{ form_label(form.nom) }}</label>
+            <div class="col-sm-8">
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, {'attr': { 'class': 'form-control input-sm' } }) }}
+            </div>
+        </div>
+    </div>    
+</div>
+
+<div class="line line-dashed line-lg pull-in mt0"></div>   
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group"> 
+            <label class="col-sm-4 control-label">{{ form_label(form.prenom) }}</label>
+            <div class="col-sm-8">
+                {{ form_errors(form.prenom) }}
+                {{ form_widget(form.prenom, {'attr': { 'class': 'form-control input-sm' } }) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a style="" href="#" onClick="javascript: return false;" class="pull-left btn btn-warning btn-xs {{ "add-item-livre" }}">
+            <i class="fa fa-plus"></i>&nbsp;{{ "Ajouter un livre" }}
+        </a>
+    </div>
+</div>
+
+<div class="collection-livre" id="{{ "livre" }}" data-prototype="{{ _self.livre(form.livres.vars.form.vars.prototype)|escape }}">
+    {% for livre in form.livres.vars.form.children %}
+        {{ _self.livre(livre) }}
+    {% endfor %}
+</div>
+
+{% macro livre(form) %}
+<div class="{{ "item-livre" }} livre livre-{{ form.vars.name }}">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="#" class="mb10 pull-right btn btn-danger btn-xs {{ "remove-item-livre" }}">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group"> 
+                <label class="col-sm-4 control-label">{{ form_label(form.titre) }}</label>
+                <div class="col-sm-8">
+                    {{ form_errors(form.titre) }}
+                    {{ form_widget(form.titre, {'attr': { 'class': 'form-control input-sm' } }) }}
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+{% endmacro %}

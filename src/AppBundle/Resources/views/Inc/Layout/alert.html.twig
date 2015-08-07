@@ -1,0 +1,14 @@
+{% set types = ['warning', 'info', 'danger', 'success'] %}
+{% if app.session.flashbag.peekAll|length > 0 %}
+    {% for type in types %}
+        {% for message in app.session.flashbag.get(type) %}
+        <div class="wrapper-messages">
+            <div class="alert alert-{{ type }}"> 
+                <button type="button" class="close" data-dismiss="{{ type }}">
+                <i class="fa fa-times"></i></button> 
+                <i class="fa fa-info-sign"></i> {{ message }}
+            </div>
+        </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}

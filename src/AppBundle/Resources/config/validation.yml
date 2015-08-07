@@ -1,0 +1,14 @@
+AppBundle\Propel\Utilisateur:
+    constraints:
+        #- Propel\PropelBundle\Validator\Constraints\UniqueObject:
+        #    fields: [ email ]
+        #    message: L'email renseigné est déjà utilisé par un autre utilisateur.
+        - Propel\PropelBundle\Validator\Constraints\UniqueObject:
+            fields: [ identifiant ]
+            message: L'identifiant renseigné est déjà utilisée par un autre utilisateur.
+                
+AppBundle\Propel\UtilisateurApplication:
+    constraints:
+        - Propel\PropelBundle\Validator\Constraints\UniqueObject:
+            fields: [utilisateur_id, application_id]
+            message: Cette application a déjà été allouée à cet utilisateur.

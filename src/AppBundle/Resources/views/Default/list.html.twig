@@ -1,0 +1,75 @@
+{% extends "AppBundle::layout.html.twig" %}
+{% import "AppBundle:Inc:Datagrid/macros.html.twig" as macros %}
+
+{% block title %}{{ "Liste des auteurs" }}{% endblock %}
+
+{% block content_wrapper %}
+    {% set auteurs = datagrid.results %}
+    {% set form = datagrid.filterFormView %}
+    {% set route = 'minimal_auteur_list' %}
+    {% block messages %}
+        {{ parent() }}
+    {% endblock %} 
+    <section class="panel">
+        <header class="panel-heading">
+            {{ "Liste des auteurs" }}
+            <ul class="btn-group nav nav-pills pull-right">
+                <li class="bg-success">
+                    <a href="{{ path('minimal_auteur_new') }}" class="btn btn-xs">
+                        <i class="fa fa-plus-circle"></i> <span class="hidden-xs">{{ "Nouvel Auteur" }}</span>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <div class="row text-sm wrapper" id="{{ "filtres" }}">
+            <div class="panel-body m-t-n m-b-n border-b">
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t text-sm no-border">
+                <thead>
+                    <tr>
+                        <th>{{ macros.sort('id', "#", route, datagrid) }}</th>
+                        <th>{{ macros.sort('nom', "Nom", route, datagrid) }}</th>
+                        <th>{{ macros.sort('prenom', "Prenom", route, datagrid) }}</th>
+                        <th>{{ "Livres" }}</th>
+                        <th>{{ "Actions" }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for auteur in auteurs %}
+                    <tr>
+                        <td>{{ auteur.id }}</td>
+                        <td>{{ auteur.nom }}</td>
+                        <td>{{ auteur.prenom }}</td>
+                        <td>
+                        {% if auteur.livres|length > 0 %}
+                            {{ auteur.livres|join(', ') }}
+                        {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ path('minimal_auteur_edit', { 'id' : auteur.id }) }}" class="btn btn-warning btn-xs">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                </div>
+                <div class="col-sm-4 text-center">
+                    <small class="text-muted inline m-t-sm m-b-sm">
+                        {% include 'AppBundle:Inc:Datagrid/pagination_info.html.twig' with { 'datagrid': datagrid, 'route' : route } %}
+                    </small>
+                </div>
+                <div class="col-sm-4 text-right text-center-xs"> 
+                    {% include 'AppBundle:Inc:Datagrid/pagination.html.twig' with { 'datagrid': datagrid, 'route' : route } %}
+                </div>
+            </div>
+        </footer>
+    </section>
+{% endblock %}

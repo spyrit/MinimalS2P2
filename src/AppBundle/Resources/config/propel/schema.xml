@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="AppBundle\Propel" defaultIdMethod="native"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/propelorm/Propel/master/generator/resources/xsd/database.xsd">
+
+    <table name="auteur" phpName="Auteur">
+        <column name="id" phpName="Id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="nom" phpName="Nom" type="VARCHAR" primaryString="true" size="255" required="true" />
+        <column name="prenom" phpName="Prenom" type="VARCHAR" size="255" required="false" />
+        
+        <behavior name="timestampable">
+            <parameter name="create_column" value="date_creation" />
+            <parameter name="update_column" value="date_maj" />
+        </behavior>
+        <behavior name="sluggable">
+            <parameter name="slug_column" value="slug" />
+        </behavior>
+    </table>
+
+    <table name="livre" phpName="Livre">
+        <column name="id" phpName="Id" type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="titre" phpName="Titre" type="VARCHAR" primaryString="true" size="255" required="true" />
+        <column name="auteur_id" phpName="AuteurId" type="INTEGER" required="true"/>
+        
+        <foreign-key foreignTable="auteur" onDelete="cascade" onUpdate="cascade" phpName="Auteur" refPhpName="Livre">
+            <reference local="auteur_id" foreign="id" />
+        </foreign-key>
+        
+        <behavior name="timestampable">
+            <parameter name="create_column" value="date_creation" />
+            <parameter name="update_column" value="date_maj" />
+        </behavior>
+        <behavior name="sluggable">
+            <parameter name="slug_column" value="slug" />
+        </behavior>
+    </table>
+
+</database>

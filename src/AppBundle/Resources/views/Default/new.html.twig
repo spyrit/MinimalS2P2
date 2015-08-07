@@ -1,0 +1,34 @@
+{% extends "AppBundle::layout.html.twig" %}
+{% block content_wrapper %}
+<div class="vbox">
+    <header class="header bg-white b-b">
+        <p>{{ "Ajouter un auteur" }}</p>
+    </header>
+    <div class="wrapper">
+        {% block messages %}
+            {{ parent() }}
+        {% endblock %}   
+        <div class="row">
+            <div class="col-lg-8">
+                <section class="panel">
+                    <form novalidate action="{{ path('minimal_auteur_new') }}" method="post" class="form-horizontal">
+                        <header class="panel-heading">Informations</header>
+                        <div class="panel-body">
+                            {% include 'AppBundle:Default:_form.html.twig' with { 'form': form } %}
+                        </div>
+                        <footer class="panel-footer">
+                            {{ form_widget(form.save, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }}
+                            {{ form(form._token) }}
+                        </footer>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {% include 'AppBundle:Default:_form.js.twig' %}
+{% endblock %}

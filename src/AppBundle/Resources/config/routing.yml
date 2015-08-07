@@ -1,0 +1,15 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:list }
+
+minimal_auteur_list:
+    path:     /auteur/liste/{action}/{datagrid}/{param1}/{param2}
+    defaults: { _controller: AppBundle:Default:list, action: null, datagrid: null, param1: null, param2: null }
+
+minimal_auteur_new:
+    path:     /auteur/nouveau
+    defaults: { _controller: AppBundle:Default:new }
+
+minimal_auteur_edit:
+    path:     /auteur/{id}/edition
+    defaults: { _controller: AppBundle:Default:edit }

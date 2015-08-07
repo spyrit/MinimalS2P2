@@ -1,0 +1,13 @@
+<div class="row"> 
+    <div class="col-lg-12"> 
+        <ul class="breadcrumb"> 
+            {% for link in links %}
+            <li>
+                {% if link.path is defined %}<a href="{{ link.path }}">{% endif %}
+                    {% if link.icon is defined %}<i class="fa fa-{{ link.icon }}"></i> {% endif %}{{ link.label }}
+                {% if link.path is defined %}</a>{% endif %}
+            </li> 
+            {% endfor %}
+        </ul>
+    </div>
+</div>

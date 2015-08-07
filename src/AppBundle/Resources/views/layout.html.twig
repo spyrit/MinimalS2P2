@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{{ "Minimal" }}{% endblock %}</title>
+        <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link href="{{ asset('favicon.png?v=2') }}" rel="shortcut icon" />
+        {% block stylesheet %}
+            <link rel="stylesheet" href="{{ asset('bundles/app/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/app/fonts/font-awesome/css/font-awesome.min.css') }}" type="text/css" />
+        {% endblock %}
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+        {% set route = app.request.attributes.get('_route') %}
+        {% block body %}
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('admin_homepage') }}">"Test S2.7 & P2"</a>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="{% if route starts with 'minimal_' %}active{% endif %}">
+                            <a href="{{ path('minimal_auteur_list') }}" class="dropdown-toggle {% if route starts with 'minimal_' %}active{% endif %}">
+                                <i class="fa fa-fw fa-inbox"></i>
+                                <span>{{ "auteurs" }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+                            
+            {% block content %}
+            <div class="container">
+                {% block breadcrumb %}
+                {% endblock %}
+
+                {% block messages %}
+                    {% include 'AppBundle:Inc:Layout/alert.html.twig' %}
+                {% endblock %}
+
+                {% block content_wrapper %}
+                {% endblock %}
+            </div>
+            {% endblock %}
+            {% block footer %}
+            {% endblock %}
+        {% endblock %}
+
+        {% block javascript %}
+            <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/bootstrap/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset("bundles/app/js/jquery.collection.js") }}"></script>
+        {% endblock %}
+    </body>
+</html>

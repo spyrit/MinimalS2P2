@@ -1,0 +1,10 @@
+services:
+    app.twig.time_extension:
+        class: AppBundle\Twig\TimeExtension
+        tags:
+            - { name: twig.extension }
+            
+    twig.stringloader:
+        class: Twig_Loader_String
+        tags:
+            - { name: twig.loader }
